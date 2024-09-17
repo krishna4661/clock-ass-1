@@ -1,0 +1,116 @@
+/* styles.css */
+body {
+    
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #eef4f6;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around ;
+    gap: 20px;
+    box-shadow: 12 12 10px rgba(0, 0, 0, 0.2);
+}
+
+.analog-clock, .digital-clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.analog-clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    background:url(krzna.jpeg);
+    background-size: cover;
+   
+    
+
+}
+
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hand {
+    position: absolute;
+    background: #333;
+    transform-origin: bottom;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hour-hand {
+    width: 6px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) rotate(0deg);
+}
+
+.minute-hand {
+    width: 4px;
+    height: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) rotate(0deg);
+}
+
+.second-hand {
+    width: 2px;
+    height: 90px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%) rotate(0deg);
+    background: red;
+}
+
+.center-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #333;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.digital-clock {
+    font-size: 2rem;
+    font-weight: bold;
+    background: #333;
+    color: white;
+    padding: 25px 22px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    grid-row:spans;
+}
+
+@media (max-width: 768px) {
+    .clock-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .analog-clock {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .digital-clock {
+        font-size: 1.5rem;
+    }
+}
